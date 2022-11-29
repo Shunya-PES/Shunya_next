@@ -7,6 +7,7 @@ import cubes from "../assets/cubes.json";
 import Lottie from "lottie-react";
 import BlogComponent from '../components/BlogComponent';
 import BlogImage from "../assets/blogimg.webp";
+import Footer from "../components/Footer";
 
 export default function Home() {
 
@@ -95,7 +96,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      
+      <Footer />
     </div>
   )
 }
