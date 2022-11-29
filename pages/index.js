@@ -1,10 +1,17 @@
 import styles from '../styles/Home.module.css';
 import Image from "next/image";
+import { useRouter } from "next/router";
 import ShunyaLogo from "../assets/logo_white.webp";
+import Arithmania from "../assets/arithmania.webp";
 import cubes from "../assets/cubes.json";
 import Lottie from "lottie-react";
+import BlogComponent from '../components/BlogComponent';
+import BlogImage from "../assets/blogimg.webp";
 
 export default function Home() {
+
+  const router = useRouter()
+
   return (
     <div className={styles.home}>
       <div className={styles.home__main}>
@@ -43,6 +50,48 @@ export default function Home() {
                 animationData={cubes}
               />
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div className={styles.home__events}>
+        <div className={styles.home__eventscontain}>
+          <div className={styles.home__eventstitle}>Club Events</div>
+          <div className={styles.home__eventsbody}>
+            <div className={styles.home__eventsleft}>
+              <div className={styles.home__eventslefttitle}>Checkout our<br />Upcoming and Past events</div>
+              <button className={styles.home__eventsleftbtn} onClick={() => router.push('/events')}>Go to Events Page</button>
+            </div>
+
+            <div className={styles.home__eventsright}>
+              <div className={styles.home__eventsrighttitle}>Recent Event</div>
+
+              <div className={styles.home__eventsrightbody}>
+                <div className={styles.home__eventsinfo}>
+                  <div className={styles.home__eventsinfotitle}>Arithmania 2022</div>
+                  <div className={styles.home__eventsinfopara}>A 30 hour hackathon with
+                    problem statements based on
+                    applied mathematics domains. The part of math which is ingrained into solving the problem statements
+                    makes a huge impact on how practical math is in everyone’s own life and gives a new outlook on how
+                    to
+                    understand the subject and approach it practically.</div>
+                </div>
+
+                <div className={styles.home__eventsimgcon}>
+                  <Image src={Arithmania} alt="Arithmania" className={styles.home__eventsimg} />
+                  <div className={styles.home__eventsimghov}>Know More</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className={styles.home__blogs}>
+        <div className={styles.home__blogscontain}>
+          <div className={styles.home__blogstitle}>Blogs</div>
+          <div className={styles.home__blogslist}>
+            <BlogComponent date="6 July 2022" title="Math to descibe black holes." description="A new set of equations can precisely describe..." tag="BLACK HOLES" image={BlogImage} />
           </div>
         </div>
       </div>
