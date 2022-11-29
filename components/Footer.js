@@ -43,7 +43,7 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className={styles.footer__shunyalogo}>
-                    <Image className={footer__shunyaimg} src={ShunyaLogo} alt="Shunya" />
+                    <Image className={styles.footer__shunyaimg} src={ShunyaLogo} alt="Shunya" />
                 </div>
             </div>
         </div>

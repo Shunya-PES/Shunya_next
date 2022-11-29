@@ -8,10 +8,39 @@ import Lottie from "lottie-react";
 import BlogComponent from '../components/BlogComponent';
 import BlogImage from "../assets/blogimg.webp";
 import Footer from "../components/Footer";
+import { useEffect, useState, useRef } from "react";
+import NET from "vanta/dist/vanta.net.min";
+import * as THREE from "three";
 
 export default function Home() {
 
   const router = useRouter()
+
+  const [vantaEffect, setVantaEffect] = useState(0)
+  const vantaRef = useRef(null)
+
+  useEffect(() => {
+    if(!vantaEffect) {
+      setVantaEffect(
+        NET({
+          el: vantaRef.current,
+          THREE,
+          mouseControls: true,
+          touchControls: false,
+          minHeight: 100,
+          minWidth: 100,
+          scale: 1.00,
+          scaleMobile: 1.00,
+          color: 0x0382b8,
+          backgroundColor: 0x001322,
+        })
+      )
+    }
+
+    return () => {
+      if(vantaEffect) vantaEffect.destroy()
+    }
+  }, [vantaEffect])
 
   return (
     <div className={styles.home}>
@@ -25,6 +54,7 @@ export default function Home() {
             <h2>We break down the myth of mathematics being mundane and inapplicable by discovering its practicality as a step-by-step process.</h2>
           </div>
         </div>
+        <div className={styles.home__vanta} ref={vantaRef}></div>
       </div>
 
       <div className={styles.home__about}>

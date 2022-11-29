@@ -4,7 +4,13 @@
   background-color: red;
 }
 
+.home__vanta {
+  width: 100vw;
+  height: 100vh;
+}
+
 .home__main {
+  position: relative;
   width: 100vw;
   height: 100vh;
   background-color: black;
@@ -12,9 +18,12 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  
+
 }
 
 .home__maincontain {
+  position: absolute;
   display: grid;
   grid-template-columns: auto auto;
   gap: 10px;
@@ -25,6 +34,7 @@
   transform: translate(-50%, -50%);
   width: 70%;
   align-items: center;
+  z-index: 20;
 }
 
 .home__shunyaimg {
