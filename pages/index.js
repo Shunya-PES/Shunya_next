@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import ShunyaLogo from '../assets/logo_white.webp';
 import Arithmania from '../assets/arithmania.webp';
+import AboutUs from '../components/AboutUs';
 import cubes from '../assets/cubes.json';
 import Lottie from 'lottie-react';
 import Footer from '../components/Footer';
@@ -51,7 +52,7 @@ export default function Home() {
             <Image
               className={styles.home__shunyaimg}
               src={ShunyaLogo}
-              alt="Shunya Logo"
+              alt='Shunya Logo'
             />
           </div>
           <div className={styles.home__shunyatitle}>
@@ -67,8 +68,9 @@ export default function Home() {
         </div>
         <div className={styles.home__vanta} ref={vantaRef}></div>
       </div>
+      <AboutUs />
 
-      <div className={styles.home__about}>
+      {/* <div className={styles.home__about}>
         <div className={styles.home__aboutcontain}>
           <div className={styles.home__abouttitle}>About Shunya</div>
 
@@ -95,7 +97,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className={styles.home__events}>
         <div className={styles.home__eventscontain}>
@@ -136,7 +138,7 @@ export default function Home() {
                 <div className={styles.home__eventsimgcon}>
                   <Image
                     src={Arithmania}
-                    alt="Arithmania"
+                    alt='Arithmania'
                     className={styles.home__eventsimg}
                   />
                   <div className={styles.home__eventsimghov}>Know More</div>
