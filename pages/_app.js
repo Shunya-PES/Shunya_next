@@ -1,4 +1,5 @@
 import '../styles/globals.css'
+import "../styles/carousel.css";
 import { useEffect } from "react";
 
 function MyApp({ Component, pageProps }) {
