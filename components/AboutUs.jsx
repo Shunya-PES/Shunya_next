@@ -4,12 +4,17 @@ import cubes from '../assets/cubes.json';
 import Lottie from 'lottie-react';
 import MemberComponent from '../components/MemberComponent';
 import membersData from '../assets/members';
+import Script from 'next/script';
 
 const AboutUs = () => {
   const [meetTheTeam, setMeetTheTeam] = useState(false);
 
   return (
     <div className={` ${styles.home__about} w-[100%] inline-block p-[20px] `}>
+      <Script
+        src='https://kit.fontawesome.com/613f9f2474.js'
+        crossorigin='anonymous'
+      />
       <div className='flex flex-row align-center justify-center mb-[20px]'>
         <span
           className={`${
@@ -69,13 +74,13 @@ const AboutUs = () => {
         </div>
       ) : (
         // Members Container right here-- map the json data for all the members
-        <div className='flex flex-col flex-wrap lg:flex-row align-center justify-center'>
+        <div className='flex flex-col flex-wrap lg:flex-row align-center justify-center m-7'>
           {membersData.map((member, index) => (
             <MemberComponent
               key={index}
               name={member.name}
               position={member.position}
-              // image_url={member.photo_link}
+              image_url={member.photo_link}
               linkedin_url={member.linkedin_profile}
             />
           ))}

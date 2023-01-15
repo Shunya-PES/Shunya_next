@@ -300,3 +300,82 @@
   display: flex;
   flex-direction: row;
 }
+/* Cards - In About Us Page */
+.member_card {
+  position: relative;
+  border-radius: 15px;
+  width: 400px;
+  height: 500px;
+  /* max-width: 300px; */
+  /* max-height: 300px; */
+  overflow: hidden;
+  margin-bottom: 10px;
+  box-shadow: 0 0 10px 0 #000;
+}
+.member_card img {
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s linear;
+}
+.d1:hover {
+  box-shadow: 10 10px 10px -30px #000;
+  transition: all 0.8s linear;
+}
+.d1:hover > .d1__overlay1 {
+  transform: translateY(100%);
+}
+.d1:hover > .d1__overlay2 {
+  transform: translateY(-40%);
+}
+.d1:hover > img {
+  transform: scale(1.2);
+}
+.d1__overlay1 {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 80%;
+  top: -80%;
+  transition: all 0.3s linear;
+}
+.d1__overlay1__title {
+  width: 100%;
+  position: absolute;
+  bottom: 5px;
+  color: #fff;
+  text-align: center;
+}
+.d1__overlay2 {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 50%;
+  bottom: -50%;
+  transition: all 0.5s;
+}
+.d1__overlay2__social {
+  width: 100%;
+  position: absolute;
+  top: 5px;
+  color: #fff;
+  text-align: center;
+}
+.fa {
+  font-size: 3.1rem;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+.fa_linkedin_square:hover {
+  color: #0077b5;
+}
+@media screen and (max-width: 640px) {
+  .member_card {
+    width: 200px;
+    height: 250px;
+  }
+  .fa {
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.3s linear;
+  }
+}

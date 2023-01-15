@@ -1,26 +1,36 @@
 import React from 'react';
-import linkedin from '../assets/linkedin.svg';
 import Image from 'next/image';
-
+import styles from '../styles/Home.module.css';
 const Member = ({ name, position, image_url, linkedin_url }) => {
   return (
-    <div className='flex w-[350px] h-[500px] flex-col items-center justify-center rounded-[18px] border shadow-md border-gray-300 p-8 m-4 object-contain'>
-      <Image src={image_url} alt='profile' height={100} width={100} />
-      <div className='mt-8 text-center'>
-        <h1 className='text-[40px] text-slate-900 font-sans font-medium'>
+    <div className={`${styles.member_card} ${styles.d1} mx-[20px] my-[50px]`}>
+      <Image
+        src={`${image_url}`}
+        alt='profile'
+        width={600}
+        height={800}
+        className='object-cover'
+      />
+      <div className={`${styles.d1__overlay1}`}>
+        <div
+          className={`${styles.d1__overlay1__title} font-sans text-[25px] md:text-[40px] `}
+        >
           {name}
-        </h1>
-        <h2 className='text font-sans font-medium mt-[10px]'>{position}</h2>
+          <h6 className='md:text-[25px] text-[15px] font-sans my-[10px]'>
+            {position}
+          </h6>
+        </div>
       </div>
-
-      <a
-        href={linkedin_url}
-        className='cursor-pointer m-5 rounded-md transition ease-in-out delay-80 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-100'
-        target='_blank'
-        rel='noreferrer'
-      >
-        <Image src={linkedin} alt='linkedin' height={40} />
-      </a>
+      <div className={styles.d1__overlay2}>
+        <div className={styles.d1__overlay2__social}>
+          <a href={linkedin_url} target='_blank' rel='noreferrer'>
+            <i
+              className={`${styles.fa} fa fa-linkedin-square ${styles.fa_linkedin_square}`}
+              aria-hidden='true'
+            ></i>
+          </a>
+        </div>
+      </div>
     </div>
   );
 };

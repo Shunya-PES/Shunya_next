@@ -8,8 +8,7 @@ const membersData = [
     branch: 'ECE',
     position: 'Founder - Club Head',
     linkedin_profile: 'https://www.linkedin.com/in/a-p-yashaswi-989587226',
-    photo_link:
-      'https://drive.google.com/open?id=11LObrwk37qbF24h56EShJunmKQfhUoLg',
+    photo_link: '/teamPhotos/A_P_Yashaswi.jpg',
   },
   {
     Timestamp: '11/1/2022 7:48:05',
@@ -20,8 +19,7 @@ const membersData = [
     branch: 'CSE',
     position: 'Head of Event Management',
     linkedin_profile: 'https://www.linkedin.com/in/pratham-kulkarni-250a811b8',
-    photo_link:
-      'https://drive.google.com/open?id=1MjCojmE1AoCOhbRRkeQSs5Y_9JyWCunB',
+    photo_link: '/teamPhotos/Pratham_Kulkarni.jpg',
   },
   {
     Timestamp: '11/1/2022 9:18:42',
@@ -33,8 +31,7 @@ const membersData = [
     position: 'Head of Math Domain',
     linkedin_profile:
       'https://www.linkedin.com/in/h-m-uma-maheshwara-urf-abhishek-a68028239',
-    photo_link:
-      'https://drive.google.com/open?id=14dQReVPaJCuiS1ueZ8e1opfiTdPgua5G',
+    photo_link: '/teamPhotos/Abhishek_Hiremath.jpg',
   },
   {
     Timestamp: '11/1/2022 12:07:45',
@@ -45,8 +42,7 @@ const membersData = [
     branch: 'Mechanical Engineering',
     position: 'Head of Event Management',
     linkedin_profile: 'https://www.linkedin.com/in/vignesh-menon-466016209/',
-    photo_link:
-      'https://drive.google.com/open?id=1joL11arhmpt5LEJRAqxXwxVFVc-ly7P7',
+    photo_link: '/teamPhotos/Vignesh_Menon.jpeg',
   },
   {
     Timestamp: '11/1/2022 18:31:07',
@@ -57,8 +53,7 @@ const membersData = [
     branch: 'EEE',
     position: 'Head of Public Relations',
     linkedin_profile: 'https://www.linkedin.com/in/ananya-v-b97505237',
-    photo_link:
-      'https://drive.google.com/open?id=1BHCd4OuvzxRRcT4ATmvXH1nU2YjHWIX6',
+    photo_link: '/teamPhotos/Ananya_Venkatesh.jpg',
   },
   {
     Timestamp: '11/1/2022 18:34:07',
@@ -69,8 +64,7 @@ const membersData = [
     branch: 'CSE',
     position: 'Head of Hospitality',
     linkedin_profile: 'https://www.linkedin.com/in/rohith-reddy-526258234',
-    photo_link:
-      'https://drive.google.com/open?id=1c5-WG-O3j20BtXqrjk0OfxTkO7aDv442',
+    photo_link: '/teamPhotos/Rohith_Reddy.jpg',
   },
 
   {
@@ -82,8 +76,7 @@ const membersData = [
     branch: 'Design',
     position: 'Mentor of Design',
     linkedin_profile: 'https://www.linkedin.com/in/vikram-sujive-3092a8231/',
-    photo_link:
-      'https://drive.google.com/open?id=1f6RUrXI4Mt5scic1ZQxkEiAKMbDqhait',
+    photo_link: '/teamPhotos/Vikram_Sujive.jpg',
   },
   {
     Timestamp: '11/1/2022 18:54:41',
@@ -95,8 +88,7 @@ const membersData = [
     position: 'Head of Marketing, Campaigning and Sponsorships',
     linkedin_profile:
       'https://www.linkedin.com/in/shrijul-venkatesh-577bb621b/',
-    photo_link:
-      'https://drive.google.com/open?id=1YL8-kFPD6VtAQRsp0Tw23hj1mjW6B8cy',
+    photo_link: '/teamPhotos/Shrijul_Venkatesh.jpg',
   },
   {
     Timestamp: '11/1/2022 19:01:09',
@@ -108,8 +100,7 @@ const membersData = [
     position: 'Head of Logistics',
     linkedin_profile:
       'https://www.linkedin.com/in/aayudh-bhattacharya-3804a31a7',
-    photo_link:
-      'https://drive.google.com/open?id=1hnkw2G4ax-o5-YZctZdjTDLxHKDqrX_X',
+    photo_link: '/teamPhotos/Aayudh_Bhattacharya.jpg',
   },
   {
     Timestamp: '11/1/2022 19:24:35',
@@ -120,8 +111,7 @@ const membersData = [
     branch: 'EEE',
     position: 'Head Of Event Management',
     linkedin_profile: 'www.linkedin.com/in/crystal-praveen-kumar-9b6537243',
-    photo_link:
-      'https://drive.google.com/open?id=1puoPQNkZysvg2iYldibR4u6v-rmTWJFe',
+    photo_link: '/teamPhotos/Crystal_PK.jpeg',
   },
   {
     Timestamp: '11/2/2022 19:51:49',
@@ -132,8 +122,7 @@ const membersData = [
     branch: 'CSE',
     position: 'Campus Head',
     linkedin_profile: 'https://linkedin.com/sarthakskumar',
-    photo_link:
-      'https://drive.google.com/open?id=1yC-PtqKZ05sgHgSidzMixYCM_mzB7mLa',
+    photo_link: '/teamPhotos/Sarthak_S_Kumar.jpg',
   },
   {
     Timestamp: '11/2/2022 19:57:56',
@@ -144,8 +133,7 @@ const membersData = [
     branch: 'CSE',
     position: 'Mathematics Mentor',
     linkedin_profile: 'https://www.linkedin.com/in/akash-agarwal-1a687b240/',
-    photo_link:
-      'https://drive.google.com/open?id=1jUtjVzpswoOQckym-fWSYEqlYm3e0LGf',
+    photo_link: '/teamPhotos/Akash_Agarwal.png',
   },
   {
     Timestamp: '11/5/2022 11:54:37',
@@ -156,8 +144,7 @@ const membersData = [
     branch: 'ECE',
     position: 'Head of Marketing and Sponsorship',
     linkedin_profile: 'https://www.linkedin.com/in/sanjana-sanjay-848aa7207',
-    photo_link:
-      'https://drive.google.com/open?id=1k8SeC8g0jUswftTS3YwI-bsszTMpzjH1',
+    photo_link: '/teamPhotos/Sanjana_Sanjay.jpg',
   },
   {
     Timestamp: '11/5/2022 21:40:07',
@@ -168,8 +155,7 @@ const membersData = [
     branch: 'CSE',
     position: 'Campus Head',
     linkedin_profile: 'https://www.linkedin.com/in/vasudha-manjunath-391411230',
-    photo_link:
-      'https://drive.google.com/open?id=1XFWNRD-5XF47-r88N55odl6SKWDWsbfA',
+    photo_link: '/teamPhotos/Vasudha_M.jpg',
   },
   {
     Timestamp: '11/6/2022 20:39:42',
@@ -180,8 +166,7 @@ const membersData = [
     branch: 'CSE',
     position: 'Head of Event Management',
     linkedin_profile: 'www.linkedin.com/in/anjali-kesanapalli-821039217',
-    photo_link:
-      'https://drive.google.com/open?id=16elO4yrgVB9vBRoWll0ZlgAhjTBZVneT',
+    photo_link: '/teamPhotos/Anjali_Kesanapalli.jpg',
   },
   {
     Timestamp: '11/15/2022 10:13:28',
@@ -193,8 +178,7 @@ const membersData = [
     position: 'Head of Operations',
     linkedin_profile:
       'https://in.linkedin.com/in/srinivaasan-n-s-8bb776249?trk=people-guest_people_search-card',
-    photo_link:
-      'https://drive.google.com/open?id=19PO771D1Z4tx5bdYed2KqvbCRX8X9xv3',
+    photo_link: '/teamPhotos/Srinivaasan_NS.jpeg',
   },
   {
     Timestamp: '11/15/2022 20:12:34',
@@ -205,8 +189,7 @@ const membersData = [
     branch: 'CS',
     position: 'Math Head',
     linkedin_profile: 'https://www.linkedin.com/in/mahesh-km-88447721b',
-    photo_link:
-      'https://drive.google.com/open?id=17iiWkZjN9Uz6LVY18j9yKDxjp9Gf3khs',
+    photo_link: '/teamPhotos/Mahesh_KM.jpg',
   },
 ];
 export default membersData;
