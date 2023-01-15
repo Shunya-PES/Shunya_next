@@ -1,5 +1,8 @@
 import '../styles/globals.css'
+import "../styles/style.css"
+import "../styles/responsive.css"
 import { useEffect } from "react";
+import {ChakraProvider,extendTheme} from "@chakra-ui/react"
 
 function MyApp({ Component, pageProps }) {
 
@@ -14,8 +17,19 @@ function MyApp({ Component, pageProps }) {
       }
     }
   },[])
+  const theme = extendTheme({
+    colors: {
+      brand: {
+        50: "#44337A",
+        100: "#B794F4",
+        500: "#B794F4", // you need this
+      }
+    }
+  });
 
-  return <Component {...pageProps} />
+  return (<ChakraProvider theme={theme}>
+  <Component {...pageProps} />
+  </ChakraProvider>)
 }
 
 export default MyApp

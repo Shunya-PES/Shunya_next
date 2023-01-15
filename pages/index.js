@@ -8,6 +8,7 @@ import Lottie from 'lottie-react';
 import Footer from '../components/Footer';
 import { useEffect, useState, useRef } from 'react';
 import NET from 'vanta/dist/vanta.net.min';
+import Contact from '../components/ContactUs';
 import * as THREE from 'three';
 
 export default function Home() {
@@ -147,6 +148,7 @@ export default function Home() {
       </div>
 
       {/* <Footer /> */}
+      <Contact/>
     </div>
   );
 }
