@@ -1,6 +1,8 @@
 import '../styles/globals.css'
 import { useEffect } from "react";
 import Footer from "../components/Footer";
+import Nav from "../components/Nav";
+import Layout from "../components/Layout";
 
 function MyApp({ Component, pageProps }) {
 
@@ -17,10 +19,9 @@ function MyApp({ Component, pageProps }) {
   },[])
 
   return (
-    <>
+    <Layout>
       <Component {...pageProps} />
-      <Footer />
-    </>
+    </Layout>
   )
 }
 
