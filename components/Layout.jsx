@@ -6,7 +6,7 @@ export default function Layout({ children }) {
     return (
         <div className="flex flex-row">
             <Nav />
-            <div className="flex flex-col min-h-screen w-[calc(100vh - 60px)] overflow-y-scroll pl-[60px]">
+            <div className="md:flex md:flex-col md:min-h-screen md:w-[calc(100vh - 60px)] md:overflow-y-scroll md:pl-[60px]">
                 {children}
                 <Footer />
             </div>
