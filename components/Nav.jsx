@@ -14,7 +14,7 @@ export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="md:w-[60px] md:h-screen md:fixed md:bg-background md:flex md:flex-col md:justify-center md:border-r md:border-white">
+    <nav className="md:w-[60px] md:h-screen md:fixed md:bg-background md:flex md:flex-col md:justify-center md:border-r md:border-white z-50">
       <div className="hidden md:flex md:flex-col md:items-center md:justify-center md:gap-12">
         <Link
           className="md:group md:flex md:flex-col md:items-center md:gap-[6px]"
