@@ -3,7 +3,13 @@ import "../styles/style.css"
 import "../styles/responsive.css"
 import "../styles/carousel.css";
 import { useEffect } from "react";
+<<<<<<< HEAD
+import Footer from "../components/Footer";
+import Nav from "../components/Nav";
+import Layout from "../components/Layout";
+=======
 import {ChakraProvider,extendTheme} from "@chakra-ui/react"
+>>>>>>> main
 
 function MyApp({ Component, pageProps }) {
 
@@ -28,9 +34,17 @@ function MyApp({ Component, pageProps }) {
     }
   });
 
+<<<<<<< HEAD
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  )
+=======
   return (<ChakraProvider theme={theme}>
   <Component {...pageProps} />
   </ChakraProvider>)
+>>>>>>> main
 }
 
 export default MyApp

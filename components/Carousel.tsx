@@ -2,13 +2,13 @@
 /* eslint-disable @next/next/no-page-custom-font */
 import React from 'react';
 import type { NextPage } from 'next';
-import Head from 'next/head';
-import Image from 'next/image';
+// import Head from 'next/head';
+// import Image from 'next/image';
 
 const Home: NextPage = () => {
   return (
     <div className="bg-black leading-normal tracking-normal">
-      <Head>
+      {/* <Head>
         <meta name="viewport" content="width=device-width, initialScale=1.0" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -16,7 +16,7 @@ const Home: NextPage = () => {
           href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
           rel="stylesheet"
         />
-      </Head>
+      </Head> */}
       <h1
         className="heading font-medium leading-tight text-5xl mt-0 mb-2 text-blue-600"
         style={{ marginLeft: '45vw', marginTop: '5vh', fontWeight: 'bolder' }}
