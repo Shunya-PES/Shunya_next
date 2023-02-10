@@ -1093,11 +1093,11 @@ nav li {
 }
 
 .main-menu li:hover .fa {
-    color: #000
+    color: rgba(5, 10, 48, 1);
 }
 
 .main-menu .logout li:hover>a {
-    color: #000;
+    color: rgba(5, 10, 48, 1);
     background-color: tomato;
 }
 
@@ -1106,7 +1106,7 @@ nav li {
 }
 
 .main-menu .logout li:hover .fa {
-    color: #000
+    color: rgba(5, 10, 48, 1);
 }
 
 .credit {
@@ -1114,14 +1114,14 @@ nav li {
     bottom: 0;
     width: 100%;
     text-align: center;
-    color: #000;
+    color: rgba(5, 10, 48, 1);
     font-weight: 900;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .credit a {
     text-decoration: none;
-    color: #202124;
+    color: rgba(5, 10, 48, 1);
     font-weight: bold;
 }
 

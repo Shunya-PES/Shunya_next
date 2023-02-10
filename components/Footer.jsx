@@ -12,7 +12,10 @@ import LinkedinLogo from '../assets/linkedin_logo.svg';
 export default function Footer() {
   const router = useRouter();
   return (
-    <div className="w-screen bg-background h-auto flex flex-col border-t-2 border-white md:flex md:flex-row md:justify-center md:items-center md:gap-40">
+    <div
+      id="Footer"
+      className="w-screen bg-background h-auto flex flex-col border-t-2 border-white md:flex md:flex-row md:justify-center md:items-center md:gap-40"
+    >
       <div className="w-full flex gap-20 mt-10 flex-row h-[70px] items-center justify-center md:gap-0 md:w-auto md:h-[100px] md:mt-0">
         <Image
           className="h-[60px] w-[96px] md:h-[100px] md:w-[215px]"

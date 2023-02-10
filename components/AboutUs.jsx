@@ -15,7 +15,7 @@ const AboutUs = () => {
         src="https://kit.fontawesome.com/613f9f2474.js"
         crossorigin="anonymous"
       />
-      <div className="flex flex-row align-center justify-center mb-[20px]">
+      <div id="About" className="flex flex-row align-center justify-center mb-[20px]">
         <span
           className={`${
             styles.home__abouttitle

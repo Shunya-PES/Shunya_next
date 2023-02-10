@@ -5,13 +5,13 @@ const Nav = () => {
       <ul>
         <div classNameName="Now">
           <li>
-            <a href="https://Learningrobo.com">
+            <a href="#home">
               <i className="fa fa-home fa-2x"></i>
               <span className="nav-text">Home</span>
             </a>
           </li>
           <li className="has-subnav">
-            <a href="#">
+            <a href="#About">
               <i className="fa fa-user fa-2x"></i>
               <span className="nav-text">About</span>
             </a>
@@ -23,13 +23,13 @@ const Nav = () => {
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="#Events">
               <i className="fa fa-info fa-2x"></i>
               <span className="nav-text">Event</span>
             </a>
           </li>
           <li className="has-subnav">
-            <a href="#">
+            <a href="#Footer">
               <i className="fa fa-address-book fa-2x"></i>
               <span className="nav-text">Contact us</span>
             </a>
