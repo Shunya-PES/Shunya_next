@@ -1,46 +1,46 @@
 import { useState } from "react";
 const Nav = () => {
   return (
-    <nav class="main-menu">
+    <nav className="main-menu">
       <ul>
-        <div className="Now">
+        <div classNameName="Now">
           <li>
             <a href="https://Learningrobo.com">
-              <i class="fa fa-th-large fa-2x"></i>
-              <span class="nav-text">Home</span>
+              <i className="fa fa-home fa-2x"></i>
+              <span className="nav-text">Home</span>
             </a>
           </li>
-          <li class="has-subnav">
+          <li className="has-subnav">
             <a href="#">
-              <i class="fa fa-cogs fa-2x"></i>
-              <span class="nav-text">About</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fa fa-paint-brush fa-2x"></i>
-              <span class="nav-text">Bulletin</span>
+              <i className="fa fa-user fa-2x"></i>
+              <span className="nav-text">About</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <i class="fa fa-info fa-2x"></i>
-              <span class="nav-text">Event</span>
+              <i className="fa fa-clipboard fa-2x"></i>
+              <span className="nav-text">Bulletin</span>
             </a>
           </li>
-          <li class="has-subnav">
+          <li>
             <a href="#">
-              <i class="fa fa-address-book fa-2x"></i>
-              <span class="nav-text">Contact us</span>
+              <i className="fa fa-info fa-2x"></i>
+              <span className="nav-text">Event</span>
+            </a>
+          </li>
+          <li className="has-subnav">
+            <a href="#">
+              <i className="fa fa-address-book fa-2x"></i>
+              <span className="nav-text">Contact us</span>
             </a>
           </li>
         </div>
       </ul>
-      <ul class="logout">
+      <ul className="logout">
         {/* <li>
           <a href="#">
-            <i class="fa fa-power-off fa-2x"></i>
-            <span class="nav-text">Logout</span>
+            <i className="fa fa-power-off fa-2x"></i>
+            <span className="nav-text">Logout</span>
           </a>
         </li> */}
       </ul>

@@ -1001,7 +1001,7 @@ body {
     text-align: center;
     margin: 5px 0;
     font-size: 10px;
-    color: #ddd
+    color: #ddd;
 }
 
 .main-menu:hover,
@@ -1011,10 +1011,10 @@ nav.main-menu.expanded {
 }
 
 .main-menu {
-    background: #212024;
+    background: rgba(5, 10, 48, 0.9);
     opacity: 1;
     position: fixed;
-    top: 0;
+    top: 0px;
     bottom: 4px;
     height: 100%;
     left: 0px;
@@ -1030,6 +1030,8 @@ nav.main-menu.expanded {
 
 .main-menu>ul {
     margin: 7px 0;
+    position: relative;
+    top: 220px;
 }
 
 .main-menu li {
@@ -1037,6 +1039,7 @@ nav.main-menu.expanded {
     display: block;
     width: 220px;
     margin: 5px 0;
+    /* top: 150px; */
 }
 
 .main-menu li>a {
@@ -1080,7 +1083,7 @@ nav li {
 
 .main-menu li:hover>a {
     color: #000;
-    background-color: #85FFBD;
+    background-color: white;
     margin: 5px;
     border-radius: 5px;
 }
@@ -1126,3 +1129,34 @@ nav li {
     position: relative;
     /* top: 50px; */
 }
+
+
+/* .side-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 60px;
+    background-color: #333;
+    transition: width 0.3s ease;
+}
+
+.nav-content {
+    display: none;
+}
+
+.open {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 200px;
+}
+
+.open a {
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 20px;
+    font-size: 18px;
+} */
