@@ -1016,7 +1016,7 @@ nav.main-menu.expanded {
     position: fixed;
     top: 0px;
     bottom: 4px;
-    height: 100%;
+    height: 40%;
     left: 0px;
     width: 60px;
     overflow: hidden;
@@ -1031,7 +1031,7 @@ nav.main-menu.expanded {
 .main-menu>ul {
     margin: 7px 0;
     position: relative;
-    top: 220px;
+    top: 15px;
 }
 
 .main-menu li {
