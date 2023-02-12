@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 
 import Footer from '../components/Footer';
 import Nav from '../components/Nav';
-import side from '../components/side';
+
 import Layout from '../components/Layout';
 
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';

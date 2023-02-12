@@ -1,4 +1,4 @@
-html,
+/* html,
 body {
     margin: 0;
     padding: 0;
@@ -12,7 +12,7 @@ body {
     overflow: hidden;
     background-color: black;
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-}
+} */
 
 #root {
     width: 100%;
