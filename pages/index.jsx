@@ -45,7 +45,7 @@ export default function Home() {
   }, [vantaEffect]);
 
   return (
-    <div className={styles.home}>
+    <div id="home" className={styles.home}>
       <div className={styles.home__main}>
         <div className={styles.home__maincontain}>
           <div className={styles.home__shunyalogo}>
@@ -70,7 +70,7 @@ export default function Home() {
       </div>
       <AboutUs />
 
-      {/* <div className={styles.home__about}>
+      {/* <div id="About" className={styles.home__about}>
         <div className={styles.home__aboutcontain}>
           <div className={styles.home__abouttitle}>About Shunya</div>
 
@@ -99,7 +99,7 @@ export default function Home() {
         </div>
       </div> */}
 
-      <div className={styles.home__events}>
+      <div id="Events" className={styles.home__events}>
         <div className={styles.home__eventscontain}>
           <div className={styles.home__eventstitle}>Club Events</div>
           <div className={styles.home__eventsbody}>
@@ -111,7 +111,7 @@ export default function Home() {
               </div>
               <button
                 className={styles.home__eventsleftbtn}
-                onClick={() => router.push('/events')}
+                onClick={() => router.push("/events")}
               >
                 Go to Events Page
               </button>

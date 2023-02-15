@@ -1,11 +1,13 @@
 import '../styles/globals.css';
 import '../styles/style.css';
 import '../styles/responsive.css';
+
 import '../styles/carousel.css';
 import { useEffect } from 'react';
 
 import Footer from '../components/Footer';
 import Nav from '../components/Nav';
+
 import Layout from '../components/Layout';
 
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
