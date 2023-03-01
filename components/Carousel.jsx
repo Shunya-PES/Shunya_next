@@ -35,7 +35,7 @@ export default function Carousel() {
             <div className="carousel-item absolute opacity-0">
               <div>
                 <img
-                  className="imgclass"
+                  className="imgclass h-80 m-10"
                   src="https://shunyapes.com/Assets/eventsPage/faceOff.webp "
                   alt=""
                 />
@@ -76,7 +76,7 @@ export default function Carousel() {
             <div className="carousel-item absolute opacity-0">
               <div>
                 <img
-                  className="imgclass"
+                  className="imgclass  h-80 "
                   src="https://shunyapes.com/Assets/eventsPage/arithmania.webp "
                   alt=""
                 />
