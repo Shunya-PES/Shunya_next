@@ -67,7 +67,7 @@ export default function Home() {
         </div>
         <div className={styles.home__vanta} ref={vantaRef}></div>
       </div>
-      <AboutUs />
+      {/* <AboutUs /> */}
 
       {/* <div className={styles.home__about}>
         <div className={styles.home__aboutcontain}>
