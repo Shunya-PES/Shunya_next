@@ -24,16 +24,16 @@ export default function Footer() {
                     </div>
                     <div className={styles.footer__socials}>
                         <Link className={styles.footer__sociallogo} href="https://www.instagram.com/shunya_pes/" target="_blank">
-                            <Image className={styles.footer__socialimg} />
+                            <Image className={styles.footer__socialimg} alt="Shunya"/>
                         </Link>
                         <Link className={styles.footer__sociallogo} href="https://discord.gg/JjshWgbR" target="_blank">
-                            <Image className={styles.footer__socialimg} />
+                            <Image className={styles.footer__socialimg} alt="Shunya"/>
                         </Link>
                         <Link className={styles.footer__sociallogo} href="mailto:shunya@.pes.edu" target="_blank">
-                            <Image className={styles.footer__socialimg} />
+                            <Image className={styles.footer__socialimg} alt="Shunya"/>
                         </Link>
                         <Link className={styles.footer__sociallogo} href="https://www.linkedin.com/company/shunya-pes/" target="_blank">
-                            <Image className={styles.footer__socialimg} />
+                            <Image className={styles.footer__socialimg} alt="Shunya"/>
                         </Link>
                     </div>
                     <div className={styles.footer__msg}>
