@@ -1,15 +1,17 @@
-import styles from '../styles/Home.module.css';
-import Image from 'next/image';
-import { useRouter } from 'next/router';
-import ShunyaLogo from '../assets/logo_white.webp';
-import Arithmania from '../assets/arithmania.webp';
-import AboutUs from '../components/AboutUs';
-import cubes from '../assets/cubes.json';
-import Lottie from 'lottie-react';
-import Footer from '../components/Footer';
-import { useEffect, useState, useRef } from 'react';
-import NET from 'vanta/dist/vanta.net.min';
-import * as THREE from 'three';
+import styles from "../styles/Home.module.css";
+import Image from "next/image";
+import { useRouter } from "next/router";
+import ShunyaLogo from "../assets/logo_white.webp";
+import Arithmania from "../assets/arithmania.webp";
+import AboutUs from "../components/AboutUs";
+import cubes from "../assets/cubes.json";
+import Lottie from "lottie-react";
+import Footer from "../components/Footer";
+import { useEffect, useState, useRef } from "react";
+import NET from "vanta/dist/vanta.net.min";
+import * as THREE from "three";
+import Link from "next/link";
+import {TbNumbers} from 'react-icons/Tb'
 
 export default function Home() {
   const router = useRouter();
@@ -51,7 +53,7 @@ export default function Home() {
             <Image
               className={styles.home__shunyaimg}
               src={ShunyaLogo}
-              alt='Shunya Logo'
+              alt="Shunya Logo"
             />
           </div>
           <div className={styles.home__shunyatitle}>
@@ -62,6 +64,9 @@ export default function Home() {
               We break down the myth of mathematics being mundane and
               inapplicable by discovering its practicality as a step-by-step
               process.
+            </h2>
+            <h2>
+              <Link href="/about"><div className="flex items-center justify-center flex-row"><TbNumbers size={40} className='m-3'/> <h1>Get To Know Us!</h1></div></Link>
             </h2>
           </div>
         </div>
@@ -110,7 +115,7 @@ export default function Home() {
               </div>
               <button
                 className={styles.home__eventsleftbtn}
-                onClick={() => router.push('/events')}
+                onClick={() => router.push("/events")}
               >
                 Go to Events Page
               </button>
@@ -137,7 +142,7 @@ export default function Home() {
                 <div className={styles.home__eventsimgcon}>
                   <Image
                     src={Arithmania}
-                    alt='Arithmania'
+                    alt="Arithmania"
                     className={styles.home__eventsimg}
                   />
                   <div className={styles.home__eventsimghov}>Know More</div>
