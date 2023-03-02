@@ -9,7 +9,7 @@ import Footer from '../components/Footer'
 import {BiArrowBack} from 'react-icons/bi'
 import Link from 'next/link'
 
-const about = () => {
+const About = () => {
   const [vantaEffect, setVantaEffect] = useState(0);
   const vantaRef = useRef(null);
   useEffect(() => {
@@ -66,4 +66,4 @@ const about = () => {
   );
 };
 
-export default about;
+export default About;
