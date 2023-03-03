@@ -51,7 +51,7 @@ const about = () => {
           and its diverse applications. It offers an opportunity to explore and
           engage with various domains of mathematics.
         </p>
-        <p className='p-[70px] font-mono text-center text-white text-[25px] overflow-hidden mb-[10px]'>
+        <p className='p-[70px] font-mono text-center text-white text-[25px] overflow-hidden mb-[11px]'>
           Stick around to find out the masterminds behind such a miraculous
           club!
         </p>
