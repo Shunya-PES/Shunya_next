@@ -61,8 +61,7 @@ const About = () => {
         </p>
 
         <p className='p-[70px] font-mono text-center text-white text-[15px] lg:text-[24px] overflow-hidden mb-[10px]'>
-          Stick around to find out the masterminds behind such a miraculous
-          club!
+          Stick around to meet the masterminds behind such a miraculous club!
         </p>
       </div>
       <AboutUs />
