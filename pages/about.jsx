@@ -5,8 +5,11 @@ import * as THREE from 'three';
 import styles from '../styles/Home.module.css';
 import Image from 'next/image';
 import shunyaLogo from '../assets/logo_white.webp';
+import Footer from '../components/Footer';
+import { BiArrowBack } from 'react-icons/bi';
+import Link from 'next/link';
 
-const about = () => {
+const About = () => {
   const [vantaEffect, setVantaEffect] = useState(0);
   const vantaRef = useRef(null);
   useEffect(() => {
@@ -37,28 +40,35 @@ const about = () => {
         ref={vantaRef}
         className={`${styles.home__vanta} flex items-center justify-center flex-col`}
       >
+        <button className='absolute top-3 left-3 text-white'>
+          <Link href='/'>
+            <BiArrowBack />
+          </Link>
+        </button>
         {/* Shunya Logo Here */}
         <Image
           src={shunyaLogo}
           alt='NA'
           height={340}
           width={300}
-          className='mt-3'
+          className='object-contain mt-8'
         />
         {/* Some Text here */}
-        <p className='p-[70px] font-mono text-center text-white text-[25px] overflow-hidden object-contain'>
+        <p className='p-[70px] font-mono text-center text-white text-[17px] lg:text-[30px] overflow-hidden object-contain'>
           Shunya is a unique club at PES University centered around mathematics
           and its diverse applications. It offers an opportunity to explore and
           engage with various domains of mathematics.
         </p>
-        <p className='p-[70px] font-mono text-center text-white text-[25px] overflow-hidden mb-[11px]'>
+
+        <p className='p-[70px] font-mono text-center text-white text-[15px] lg:text-[24px] overflow-hidden mb-[10px]'>
           Stick around to find out the masterminds behind such a miraculous
           club!
         </p>
       </div>
       <AboutUs />
+      {/* <Footer/> */}
     </div>
   );
 };
 
-export default about;
+export default About;

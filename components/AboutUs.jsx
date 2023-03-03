@@ -48,7 +48,7 @@ const AboutUs = () => {
 
       {!meetTheTeam ? (
         <div className='flex flex-col lg:flex-row align-center justify-center  sm-mx-[50px] lg:mx-[100px] lg:my-[20px]'>
-          <div className={`${styles.home__aboutpara} lg:w-[1000px] `}>
+          <div className={`${styles.home__aboutpara} lg:w-[1000px]`}>
             We are an analysis-driven and research-oriented club. We host fun
             activities and events related to a variety of branches of applied
             math.

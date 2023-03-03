@@ -10,6 +10,8 @@ import Footer from '../components/Footer';
 import { useEffect, useState, useRef } from 'react';
 import NET from 'vanta/dist/vanta.net.min';
 import * as THREE from 'three';
+import Link from 'next/link';
+import { TbNumbers } from 'react-icons/Tb';
 
 export default function Home() {
   const router = useRouter();
@@ -62,7 +64,16 @@ export default function Home() {
               We break down the myth of mathematics being mundane and
               inapplicable by discovering its practicality as a step-by-step
               process.
+              <Link href='/about' className='self-start'>
+                <div className='flex items-center justify-center flex-row'>
+                  <TbNumbers size={40} className='m-3' />
+                  <h1 className='w-[170px] '>Know More</h1>
+                </div>
+              </Link>
             </h2>
+            {/* <h2>
+              <Link href="/about"><div className="flex items-center justify-center flex-row"><TbNumbers size={40} className='m-3'/> <h1>Get To Know Us!</h1></div></Link>
+            </h2> */}
           </div>
         </div>
         <div className={styles.home__vanta} ref={vantaRef}></div>
