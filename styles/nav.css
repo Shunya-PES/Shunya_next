@@ -55,39 +55,50 @@ body {
 
 .active::before {
     content: "";
-    position: absolute;
-    width: 100%;
-    height: 95%;
-    background-color: #373737;
-    opacity: 1;
-    z-index: -1;
-    top: 50%;
-    transform: translateY(-50%);
-    left: -0.25rem;
-    border-top-right-radius: 0.8rem;
-    border-bottom-right-radius: 0.8rem;
+  position: absolute;
+  width: 100%;
+  height: 95%;
+  background-color: #373737;
+  opacity: 1;
+  z-index: -1;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -0.25rem;
+  border-top-right-radius: 0.8rem;
+  border-bottom-right-radius: 0.8rem;
 }
 
 .boxicon::after {
     content: "";
-    position: absolute;
-    width: 100%;
-    height: 95%;
-    background-color: #373737;
-    opacity: 0;
-    z-index: -1;
-    top: 50%;
-    transform: translateY(-50%);
-    left: -0.25rem;
-    border-top-right-radius: 0.8rem;
-    border-bottom-right-radius: 0.8rem;
+  position: absolute;
+  width: 100%;
+  height: 95%;
+  background-color: #373737;
+  opacity: 0;
+  z-index: -1;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -0.25rem;
+  border-top-right-radius: 0.8rem;
+  border-bottom-right-radius: 0.8rem;
 }
-
+.boxicon-label {
+    position: absolute;
+    top: 50%;
+    right: 100%; /* display to the left of the icon */
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    white-space: nowrap;
+  }
 .boxicon-container:hover>.boxicon::after {
     opacity: 1;
     transition: 0.1s;
 }
-
+.boxicon-container:hover .boxicon-label {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+  }
 .sidebar>*:first-child {
     margin-top: 1rem;
     margin-bottom: 1rem;
