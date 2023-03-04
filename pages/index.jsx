@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import ShunyaLogo from '../assets/logo_white.webp';
 import Arithmania from '../assets/arithmania.webp';
 import AboutUs from '../components/AboutUs';
+import Carousel from '../components/Carousel';
 // import cubes from '../assets/cubes.json';
 // import Lottie from 'lottie-react';
 // import Footer from '../components/Footer';
@@ -98,8 +99,8 @@ export default function Home() {
           </div>
         </div>
       </div> */}
-
-      <div id="Events" className={styles.home__events}>
+      <Carousel/>
+      {/* <div id="Events" className={styles.home__events}>
         <div className={styles.home__eventscontain}>
           <div className={styles.home__eventstitle}>Club Events</div>
           <div className={styles.home__eventsbody}>
@@ -147,7 +148,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* <Footer /> */}
       <Contact />

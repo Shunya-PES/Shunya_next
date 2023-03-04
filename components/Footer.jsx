@@ -36,7 +36,8 @@ export default function Footer() {
           <Link href="/">Contact</Link>
           <Link href="/">Outreach</Link>
         </div>
-        <div class="flex flex-row w-full justify-center mt-5 gap-0 md:w-auto md:mt-[20px] md:mb-[20px]">
+
+        <div className="flex flex-row w-full justify-center mt-5 gap-8 md:w-auto md:mt-[20px] md:mb-[20px]">
           <Link href="https://www.instagram.com/shunya_pes/">
             <Image
               className="h-[20px] w-[20px] cursor-pointer md:h-[32px] md:w-[32px] p-0 m-4"
