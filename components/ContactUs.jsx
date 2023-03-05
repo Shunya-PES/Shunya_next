@@ -64,7 +64,7 @@ export default function Contact() {
   // console.log(values)
   return (
     <>
-      <div id="contact-section" className="content_section dark">
+      <div id="contact-section" className="content_section dark" style={{paddingBottom:"80px"}}>
         <div
           className="section-heading hover-underline-animation dark"
           data-aos="fade-up"
@@ -97,7 +97,7 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="contact_form">
+          <div className="contact_form" style={{width:"50%"}}>
             <div>
               <FormControl
                 isRequired
@@ -152,7 +152,7 @@ export default function Contact() {
                 mt={5}
               >
                 <div>
-                  <FormLabel className="contact_label">Subject</FormLabel>
+                  <FormLabel className="contact_label" >Subject</FormLabel>
                   <Input
                     onBlur={onBlur}
                     type="text"
@@ -177,7 +177,7 @@ export default function Contact() {
                 mt={5}
                 ml={10}
               >
-                <Container className="form-content">
+                <Container className="form-content" ml={8}>
                   <FormLabel className="contact_label">Message</FormLabel>
                   <textarea
                     onBlur={onBlur}
@@ -205,7 +205,8 @@ export default function Contact() {
                 }
                 onClick={onSubmit}
                 isLoading={isLoading}
-                mt={20}
+                mt={5}
+                ml={40}
               >
                 Submit{' '}
               </Button>
