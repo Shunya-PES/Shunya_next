@@ -1,36 +1,43 @@
 import { useState } from "react";
+import { RiHome3Line } from 'react-icons/ri';
+import { RiContactsLine } from 'react-icons/ri';
+import { BsCalendar4Event } from 'react-icons/bs';
+import { HiListBullet } from 'react-icons/hi';
+import { AiOutlineInfo } from 'react-icons/ai';
+import { RxListBullet } from 'react-icons/rx';
 const Nav = () => {
   return (
     <nav className="main-menu">
       <ul>
         <div className="Now">
           <li>
+          
             <a href="#home">
-              <i className="fa fa-home fa-2x"></i>
-              <span className="nav-text">Home</span>
+            <RiHome3Line size={40} />
+            <span className="nav-text">Home</span>
             </a>
           </li>
           <li className="has-subnav">
             <a href="#About">
-              <i className="fa fa-user fa-2x"></i>
+              <AiOutlineInfo size={40} />
               <span className="nav-text">About</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <i className="fa fa-clipboard fa-2x"></i>
+            <RxListBullet size={40 }/>
               <span className="nav-text">Bulletin</span>
             </a>
           </li>
           <li>
             <a href="#Events">
-              <i className="fa fa-info fa-2x"></i>
-              <span className="nav-text">Event</span>
+            <BsCalendar4Event size={40} />
+            <span className="nav-text">Event</span>
             </a>
           </li>
           <li className="has-subnav">
             <a href="#Footer">
-              <i className="fa fa-address-book fa-2x"></i>
+            <RiContactsLine size={40} />
               <span className="nav-text">Contact us</span>
             </a>
           </li>

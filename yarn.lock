@@ -3148,6 +3148,7 @@ react-focus-lock@^2.9.2:
   integrity sha512-5JfrsOKyA5Zn3h958mk7bAcfphr24jPoMoznJ8vaJF6fUrPQ8zrtEd3ILLOK8P5jvGxdMd96OxWNjDzATfR2qw==
   dependencies:
     "@babel/runtime" "^7.0.0"
+
     focus-lock "^0.11.2"
     prop-types "^15.6.2"
     react-clientside-effect "^1.2.6"
@@ -3478,6 +3479,7 @@ tsconfig-paths@^3.14.1:
   version "3.14.1"
   resolved "https://registry.npmjs.org/tsconfig-paths/-/tsconfig-paths-3.14.1.tgz"
   integrity sha512-fxDhWnFSLt3VuTwtvJt5fpwxBHg5AdKWMsgcPOOIilyjymcYVZoCQF8fvFRezCNfblEXmi+PcM1eYHeOAgXCOQ==
+
   dependencies:
     "@types/json5" "^0.0.29"
     json5 "^1.0.1"
