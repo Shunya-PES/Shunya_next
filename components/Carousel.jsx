@@ -6,16 +6,25 @@ export default function Carousel() {
   
   
   return (
-    <div className="bg-[#000000] leading-normal tracking-normal">
+    <div className="bg-black leading-normal tracking-normal">
+      {/* <Head>
+        <meta name="viewport" content="width=device-width, initialScale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+          rel="stylesheet"
+        />
+      </Head> */}
       <h1
-        className="heading leading-tight text-5xl text-center mt-10 mb-0 font-bold text-[#ffffff]  "
-        // style={{ marginLeft: "45vw", marginTop: "5vh", fontWeight: "bolder" }}
+        className="heading font-medium leading-tight text-5xl mt-0 mb-2 text-blue-600"
+        style={{ marginLeft: "45vw", marginTop: "5vh", fontWeight: "bolder" }}
       >
         Events
       </h1>
       <div className="box">
-        <div className="carousel relative shadow-2xl bg-[#232323]">
-          <div className="carousel-inner relative overflow-hidden w-full ">
+        <div className="carousel relative shadow-2xl bg-white">
+          <div className="carousel-inner relative overflow-hidden w-full">
             <input
               className="carousel-open"
               type="radio"
@@ -25,19 +34,19 @@ export default function Carousel() {
               defaultChecked
               hidden
             />
-            <div className="carousel-item absolute opacity-0 lg:flex-row lg:h-64 ">
-              <div className="mb-12">
+            <div className="carousel-item absolute opacity-0">
+              <div>
                 <img
-                  className="imgclass h-60 mt-20 mx-auto md:h-72 lg:h-80 lg:m-10 lg:mb-0 "
+                  className="imgclass h-80 m-10"
                   src="https://shunyapes.com/Assets/eventsPage/faceOff.webp "
                   alt=""
                 />
               </div>
-              <div className="carousel-text mx-auto h-96 lg:mt-12 lg:ml-4">
-                <h2 className="parah font-medium leading-tight text-3xl mb-2 text-blue-600  lg:text-4xl">
+              <div className="carousel-text">
+                <h2 className="parah font-medium leading-tight text-4xl mt-0 mb-2 text-blue-600">
                   1. Face-Off
                 </h2>
-                <p className="para text-base lg:text-lg">
+                <p className="para">
                   {" "}
                   Team Shunya is super excited to inform you that we are going
                   to be hosting our very first event in the month of April. But
@@ -51,13 +60,13 @@ export default function Carousel() {
             </div>
             <label
               htmlFor="carousel-4"
-              className="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-600 leading-tight text-center z-10 inset-y-0 left-0 my-auto"
+              className="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto"
             >
               ‹
             </label>
             <label
               htmlFor="carousel-2"
-              className="next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-600 leading-tight text-center z-10 inset-y-0 right-0 my-auto"
+              className="next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto"
             >
               ›
             </label>
@@ -71,19 +80,19 @@ export default function Carousel() {
               aria-hidden="true"
               hidden
             />
-            <div className="carousel-item absolute opacity-0 lg:flex-row lg:h-64">
-              <div className="mb-12">
+            <div className="carousel-item absolute opacity-0">
+              <div>
                 <img
-                  className="imgclass h-60 mt-20 mx-auto md:h-72 lg:h-80 lg:m-10 lg:mb-0 "
-                  src="https://shunyapes.com/Assets/eventsPage/arithmania.webp"
+                  className="imgclass  h-80 m-10"
+                  src="https://shunyapes.com/Assets/eventsPage/arithmania.webp "
                   alt=""
                 />
               </div>
-              <div className="carousel-text mx-auto h-96 lg:mt-12 lg:ml-4">
-                <h2 className="parah font-medium leading-tight text-3xl mb-2 text-blue-600 lg:text-4xl">
+              <div className="carousel-text">
+                <h2 className="parah font-medium leading-tight text-4xl mt-0 mb-2 text-blue-600">
                   2. Arithemania
                 </h2>
-                <p className="para text-base lg:text-lg">
+                <p className="para">
                   {" "}
                   Team Shunya is super excited to inform you that we are going
                   to be hosting our very first event in the month of April. But
@@ -97,13 +106,13 @@ export default function Carousel() {
             </div>
             <label
               htmlFor="carousel-1"
-              className="prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-600 leading-tight text-center z-10 inset-y-0 left-0 my-auto"
+              className="prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto"
             >
               ‹
             </label>
             <label
               htmlFor="carousel-3"
-              className="next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-600 leading-tight text-center z-10 inset-y-0 right-0 my-auto"
+              className="next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto"
             >
               ›
             </label>
@@ -116,19 +125,19 @@ export default function Carousel() {
               aria-hidden="true"
               hidden
             />
-            <div className="carousel-item absolute opacity-0 lg:flex-row lg:h-64">
-              <div className="mb-12">
+            <div className="carousel-item absolute opacity-0">
+              <div>
                 <img
-                  className="imgclass h-60 mt-20 mx-auto md:h-72 lg:h-80 lg:m-10 lg:mb-0 "
-                  src="https://shunyapes.com/Assets/eventsPage/faceOff.webp "
+                  className="imgclass  h-80 m-10"
+                  src="https://shunyapes.com/Assets/eventsPage/faceOff.webp"
                   alt=""
                 />
               </div>
-              <div className="carousel-text mx-auto h-96 lg:mt-12 lg:ml-4">
-                <h2 className="parah font-medium leading-tight text-3xl mb-2 text-blue-600 lg:text-4xl">
+              <div className="carousel-text">
+                <h2 className="parah font-medium leading-tight text-4xl mt-0 mb-2 text-blue-600">
                   3. Face-Off
                 </h2>
-                <p className="para text-base lg:text-lg">
+                <p className="para">
                   {" "}
                   Team Shunya is super excited to inform you that we are going
                   to be hosting our very first event in the month of April. But
@@ -142,13 +151,13 @@ export default function Carousel() {
             </div>
             <label
               htmlFor="carousel-2"
-              className="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-600 leading-tight text-center z-10 inset-y-0 left-0 my-auto"
+              className="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto"
             >
               ‹
             </label>
             <label
               htmlFor="carousel-4"
-              className="next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-600 leading-tight text-center z-10 inset-y-0 right-0 my-auto"
+              className="next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto"
             >
               ›
             </label>
@@ -161,19 +170,19 @@ export default function Carousel() {
               aria-hidden="true"
               hidden
             />
-            <div className="carousel-item absolute opacity-0 lg:flex-row lg:h-64">
-              <div className="mb-12">
+            <div className="carousel-item absolute opacity-0">
+              <div>
                 <img
-                  className="imgclass h-60 mt-20 mx-auto md:h-72 lg:h-80 lg:m-10 lg:mb-0 "
-                  src="https://shunyapes.com/Assets/eventsPage/arithmania.webp"
+                  className="imgclass  h-80 m-10"
+                  src="https://shunyapes.com/Assets/eventsPage/arithmania.webp "
                   alt=""
                 />
               </div>
-              <div className="carousel-text mx-auto h-96 lg:mt-12 lg:ml-4">
-                <h2 className="parah font-medium leading-tight text-3xl mb-2 text-blue-600 lg:text-4xl">
+              <div className="carousel-text">
+                <h2 className="parah font-medium leading-tight text-4xl mt-0 mb-2 text-blue-600">
                   4. Arithemania
                 </h2>
-                <p className="para text-base lg:text-lg">
+                <p className="para">
                   {" "}
                   Team Shunya is super excited to inform you that we are going
                   to be hosting our very first event in the month of April. But
@@ -187,13 +196,13 @@ export default function Carousel() {
             </div>
             <label
               htmlFor="carousel-3"
-              className="prev control-4 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-600 leading-tight text-center z-10 inset-y-0 left-0 my-auto"
+              className="prev control-4 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto"
             >
               ‹
             </label>
             <label
               htmlFor="carousel-1"
-              className="next control-4 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-600 leading-tight text-center z-10 inset-y-0 right-0 my-auto"
+              className="next control-4 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto"
             >
               ›
             </label>
