@@ -9,11 +9,14 @@ body {
 
 .carousel-item {
     display: flex;
+    flex-direction: column;
     background-color: rgb(35, 35, 35);
     color: white;
-    height: 60vh;
-    -webkit-transition: opacity 0.4s ease-out;
-    transition: opacity 0.4s ease-out;
+    height: 140vh;
+    -webkit-transition: opacity 0.4s ease;
+    transition: opacity 0.4s ease;
+    transition-timing-function: linear;
+    
 }
 #carousel-1:checked~.control-1,
 #carousel-2:checked~.control-2,
@@ -45,8 +48,10 @@ body {
 .box {
     width: 80vw;
     margin: 10vw;
-    margin-top: 20vh;
+    margin-top: 10vh;
     font-family: 'Poppins', sans-serif;
+    box-shadow: 3px 3px 17px #232323, -3px -3px 20px #232323;
+    border-radius: 15px;
 }
 
 img {
@@ -56,9 +61,9 @@ img {
     border: 2px solid #2b6cb0;
 }
 
-.carousel-text {
-    margin: 10vh;
-}
+/* .carousel-text {
+    margin: 5vh;
+} */
 
 p {
     width: 40vw;
@@ -67,8 +72,8 @@ p {
     text-size-adjust: auto;
 }
 
-@media only screen and (max-width: 820px) {
-    /* For tablets: */
+ /* @media only screen and (max-width: 820px) {
+
     [class*='carousel-item'] {
         height: 50vh;
     }
@@ -86,10 +91,10 @@ p {
         margin-top: 5%;
         margin-bottom: 5%;
     }
-}
+} */
 
-@media only screen and (max-width: 600px) {
-    /* For mobile phones: */
+/* @media only screen and (max-width: 600px) {
+    
     [class*='carousel-item'] {
         flex-direction: column;
         height: fit-content;
@@ -103,5 +108,13 @@ p {
     }
     [class*='parah'] {
         font-size: large;
+    }
+}  */
+
+@media only screen and (min-width: 1024px){
+
+    [class*='carousel-item'] {
+        flex-direction: row;
+        height: fit-content;
     }
 }

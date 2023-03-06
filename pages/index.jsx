@@ -99,7 +99,7 @@ export default function Home() {
           </div>
         </div>
       </div> */}
-      <Carousel/>
+        <Carousel/>
       {/* <div id="Events" className={styles.home__events}>
         <div className={styles.home__eventscontain}>
           <div className={styles.home__eventstitle}>Club Events</div>
