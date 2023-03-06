@@ -12,10 +12,13 @@ const AboutUs = () => {
   return (
     <div className={` ${styles.home__about} w-[100%] inline-block p-[20px] `}>
       <Script
-        src='https://kit.fontawesome.com/613f9f2474.js'
-        crossorigin='anonymous'
+        src="https://kit.fontawesome.com/613f9f2474.js"
+        crossorigin="anonymous"
       />
-      <div className='flex flex-row align-center justify-center mb-[20px]'>
+      <div
+        id="About"
+        className="flex flex-row align-center justify-center mb-[20px]"
+      >
         <span
           className={`${
             styles.home__abouttitle
@@ -47,8 +50,8 @@ const AboutUs = () => {
       </div>
 
       {!meetTheTeam ? (
-        <div className='flex flex-col lg:flex-row align-center justify-center  sm-mx-[50px] lg:mx-[100px] lg:my-[20px]'>
-          <div className={`${styles.home__aboutpara} lg:w-[1000px]`}>
+        <div className="flex flex-col lg:flex-row align-center justify-center  sm-mx-[50px] lg:mx-[100px] lg:my-[20px]">
+          <div className={`${styles.home__aboutpara} lg:w-[1000px] `}>
             We are an analysis-driven and research-oriented club. We host fun
             activities and events related to a variety of branches of applied
             math.
@@ -74,7 +77,7 @@ const AboutUs = () => {
         </div>
       ) : (
         // Members Container right here-- map the json data for all the members
-        <div className='flex flex-col flex-wrap lg:flex-row align-center justify-center m-7'>
+        <div className="flex flex-col flex-wrap lg:flex-row align-center justify-center m-7">
           {membersData.map((member, index) => (
             <MemberComponent
               key={index}
