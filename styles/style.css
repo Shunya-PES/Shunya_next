@@ -1007,7 +1007,7 @@ body {
 
 .main-menu:hover,
 nav.main-menu.expanded {
-    width: 220px;
+    width: 150px;
     overflow: visible;
 }
 
@@ -1016,8 +1016,8 @@ nav.main-menu.expanded {
     /* opacity: 1; */
     position: fixed;
     top: 0px;
-    bottom: 20px;
-    height: 38%;
+    bottom: 0px;
+    height: 35%;
     left: 0px;
     width: 60px;
     overflow: hidden;
