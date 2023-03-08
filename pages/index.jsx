@@ -48,14 +48,14 @@ export default function Home() {
   }, [vantaEffect]);
 
   return (
-    <div id="home" className={styles.home}>
+    <div id='home' className={styles.home}>
       <div className={styles.home__main}>
         <div className={styles.home__maincontain}>
           <div className={styles.home__shunyalogo}>
             <Image
               className={styles.home__shunyaimg}
               src={ShunyaLogo}
-              alt="Shunya Logo"
+              alt='Shunya Logo'
             />
           </div>
           <div className={styles.home__shunyatitle}>
@@ -69,7 +69,7 @@ export default function Home() {
               <Link href='/about' className='self-start'>
                 <div className='flex items-center justify-center flex-row'>
                   <TbNumbers size={40} className='m-3' />
-                  <h1 className='w-[170px] '>Know More</h1>
+                  <h1 className='w-[170px] text-white '>Know More</h1>
                 </div>
               </Link>
             </h2>
@@ -110,7 +110,7 @@ export default function Home() {
           </div>
         </div>
       </div> */}
-        <Carousel/>
+      <Carousel />
       {/* <div id="Events" className={styles.home__events}>
         <div className={styles.home__eventscontain}>
           <div className={styles.home__eventstitle}>Club Events</div>
