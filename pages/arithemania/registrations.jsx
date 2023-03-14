@@ -23,8 +23,8 @@ export default function Registrations() {
             campus: "RR",
             branch: "CSE",
             gender: "Male",
-            guardian_name: 0,
-            guardian_phone: null,
+            guardian_name: "",
+            guardian_phone: 0,
             is_hostellite: false,
             hostel_room: ""
         },
@@ -64,6 +64,8 @@ export default function Registrations() {
     const [domain, setDomain] = useState("Data Science and Intelligent Communication");
     const [problemStatement, setProblemStatement] = useState("");
     const [solution, setSolution] = useState("");
+
+    const [loading, setLoading] = useState(false);
 
     const addMember = () => {
         setMemberCount(prev => prev+1)
@@ -195,15 +197,15 @@ export default function Registrations() {
         <div className="min-h-screen flex flex-col w-full items-center bg-background text-center">
             <h1 className="text-white font-bold text-3xl font-mono mt-7 mb-7">Arithmania Registrations</h1>
             <div className="flex flex-col w-[80%] h-auto">
-                <form onSubmit={validateData} className="flex flex-col text-left">
-                    <label className="flex flex-col font-mono text-white mb-5 font-bold">
+                <form onSubmit={validateData} className="flex flex-col text-left items-center w-full">
+                    <label className="text-lg flex flex-col font-mono text-white mb-6 font-bold w-full">
                         Team Name
-                        <input className="w-full h-8 rounded mt-2 pl-2 pr-2 text-white font-mono font-normal bg-inherit border-2 border-white" type="text" value={teamName} onChange={(e) => setTeamName(e.target.value)} />
+                        <input className="text-base w-full h-8 rounded mt-2 pl-2 pr-2 text-white font-mono font-normal bg-inherit border-2 border-white focus:outline-none" type="text" value={teamName} onChange={(e) => setTeamName(e.target.value)} />
                     </label>
 
-                    <label className="flex flex-col font-mono text-white mb-5 font-bold">
+                    <label className="text-lg flex flex-col font-mono text-white mb-6 font-bold w-full">
                         Domain
-                        <select className="w-full h-8 rounded mt-2 pl-2 pr-2 text-white font-mono font-normal bg-inherit border-2 border-white" onChange={(e) => setDomain(e.target.value)}>
+                        <select className="text-base focus:outline-none w-full h-8 rounded mt-2 pl-2 pr-2 text-white font-mono font-normal bg-inherit border-2 border-white" onChange={(e) => setDomain(e.target.value)}>
                             <option value="Data Science and Intelligent Communication">Data Science and Intelligent Communication</option>
                             <option value="Robotics and Automation">Robotics and Automation</option>
                             <option value="Bigdata Analytics">Bigdata Analytics</option>
@@ -211,50 +213,51 @@ export default function Registrations() {
                         </select>
                     </label>
 
-                    <label className="flex flex-col font-mono text-white mb-5 font-bold">
+                    <label className="text-lg flex flex-col font-mono text-white mb-6 font-bold w-full">
                         Problem Statement
-                        <input className="w-full h-8 rounded mt-2 pl-2 pr-2 text-white font-mono font-normal bg-inherit border-2 border-white" value={problemStatement} onChange={(e) => setProblemStatement(e.target.value)} type="text" />
+                        <input className="text-base focus:outline-none w-full h-8 rounded mt-2 pl-2 pr-2 text-white font-mono font-normal bg-inherit border-2 border-white" value={problemStatement} onChange={(e) => setProblemStatement(e.target.value)} type="text" />
                     </label>
 
-                    <label className="flex flex-col font-mono text-white mb-5 font-bold">
+                    <label className="text-lg flex flex-col font-mono text-white mb-6 font-bold w-full">
                         Solution
-                        <textarea className="w-full min-h-16 rounded mt-2 pl-2 pr-2 text-white font-mono font-normal bg-inherit border-2 border-white" value={solution} onChange={(e) => setSolution(e.target.value)}></textarea>
+                        <textarea className="text-base focus:outline-none w-full min-h-32 rounded mt-2 pl-2 pr-2 text-white font-mono font-normal bg-inherit border-2 border-white" value={solution} onChange={(e) => setSolution(e.target.value)}></textarea>
                     </label>
 
-                    <div className="flex flex-col mt-[30px]">
-                        <div className="flex flex-row">
-                            <h2 className="text-white font-mono">Team Details</h2>
-                            {memberCount === 3 && <button onClick={addMember}>Add Member</button>}
-                            {memberCount === 4 && <button onClick={removeMember}>Remove Member</button>}
+                    <div className="flex flex-col mt-[30px] w-full">
+                        <div className="flex flex-row items-center justify-between mb-[20px]">
+                            <h2 className="text-2xl font-bold text-white font-mono text">Team Details</h2>
+                            {memberCount === 3 && <button className="text-white font-mono font-bold text-base border-2 border-white rounded p-[3px] cursor-pointer" onClick={addMember}>Add Member</button>}
+                            {memberCount === 4 && <button className="text-white font-mono font-bold text-base border-2 border-white rounded p-[3px] cursor-pointer" onClick={removeMember}>Remove Member</button>}
                         </div>
                         
-                        <div className="w-full h-auto flex flex-col md:flex-row">
+                        <div className="w-full h-auto flex flex-col gap-8 md:flex-row">
                             {teamMembers.map((data, index) => {
                                 return (
                                     <div key={index} className="flex flex-col">
-                                        <label className="flex flex-col font-mono text-white">
+                                        <span className="text-lg text-white font-bold font-mono mb-[10px]">Member {data.id}:</span>
+                                        <label className="flex flex-col font-mono text-white mb-6 font-bold">
                                             Name
-                                            <input type="text" value={data.name} onChange={(e) => handleTextChange(data.id, e.target.value, "name")} />
+                                            <input className="text-base focus:outline-none w-full h-8 rounded mt-2 pl-2 pr-2 text-white font-mono font-normal bg-inherit border-2 border-white" type="text" value={data.name} onChange={(e) => handleTextChange(data.id, e.target.value, "name")} />
                                         </label>
 
-                                        <label className="flex flex-col font-mono text-white">
+                                        <label className="flex flex-col font-mono text-white mb-6 font-bold">
                                             SRN
-                                            <input type="text" value={data.srn} onChange={(e) => handleTextChange(data.id, e.target.value, "srn")} />
+                                            <input className="text-base focus:outline-none w-full h-8 rounded mt-2 pl-2 pr-2 text-white font-mono font-normal bg-inherit border-2 border-white" type="text" value={data.srn} onChange={(e) => handleTextChange(data.id, e.target.value, "srn")} />
                                         </label>
 
-                                        <label className="flex flex-col font-mono text-white">
+                                        <label className="flex flex-col font-mono text-white mb-6 font-bold">
                                             Email
-                                            <input type="email" value={data.email} onChange={(e) => handleTextChange(data.id, e.target.value, "email")} />
+                                            <input className="text-base focus:outline-none w-full h-8 rounded mt-2 pl-2 pr-2 text-white font-mono font-normal bg-inherit border-2 border-white" type="email" value={data.email} onChange={(e) => handleTextChange(data.id, e.target.value, "email")} />
                                         </label>
 
-                                        <label className="flex flex-col font-mono text-white">
+                                        <label className="flex flex-col font-mono text-white mb-6 font-bold">
                                             Phone
-                                            <input type="number" value={data.phone} onChange={(e) => handleTextChange(data.id, e.target.value, "phone")} />
+                                            <input className="text-base focus:outline-none w-full h-8 rounded mt-2 pl-2 pr-2 text-white font-mono font-normal bg-inherit border-2 border-white" type="number" value={data.phone} onChange={(e) => handleTextChange(data.id, e.target.value, "phone")} />
                                         </label>
 
-                                        <label className="flex flex-col font-mono text-white">
+                                        <label className="flex flex-col font-mono text-white mb-6 font-bold">
                                             Semester
-                                            <select onChange={(e) => handleTextChange(data.id, e.target.value, "semester")}>
+                                            <select className="text-base focus:outline-none w-full h-8 rounded mt-2 pl-2 pr-2 text-white font-mono font-normal bg-inherit border-2 border-white" onChange={(e) => handleTextChange(data.id, e.target.value, "semester")}>
                                                 <option value={2}>2</option>
                                                 <option value={4}>4</option>
                                                 <option value={6}>6</option>
@@ -262,18 +265,18 @@ export default function Registrations() {
                                             </select>
                                         </label>
 
-                                        <label className="flex flex-col font-mono text-white">
+                                        <label className="flex flex-col font-mono text-white mb-6 font-bold">
                                             Campus
-                                            <select onChange={(e) => handleTextChange(data.id, e.target.value, "campus")}>
+                                            <select className="text-base focus:outline-none w-full h-8 rounded mt-2 pl-2 pr-2 text-white font-mono font-normal bg-inherit border-2 border-white" onChange={(e) => handleTextChange(data.id, e.target.value, "campus")}>
                                                 <option value="RR">RR</option>
                                                 <option value="EC">EC</option>
                                                 <option value="HN">HN</option>
                                             </select>
                                         </label>
 
-                                        <label className="flex flex-col font-mono text-white">
+                                        <label className="flex flex-col font-mono text-white mb-6 font-bold">
                                             Branch
-                                            <select onChange={(e) => handleTextChange(data.id, e.target.value, "branch")}>
+                                            <select className="text-base focus:outline-none w-full h-8 rounded mt-2 pl-2 pr-2 text-white font-mono font-normal bg-inherit border-2 border-white" onChange={(e) => handleTextChange(data.id, e.target.value, "branch")}>
                                                 <option value="CSE">CSE</option>
                                                 <option value="ECE">ECE</option>
                                                 <option value="EEE">EEE</option>
@@ -284,35 +287,35 @@ export default function Registrations() {
                                         </label>
                                         {data.branch === "Others" && <input type="text" placeholder="Enter your branch" />}
 
-                                        <label className="flex flex-col font-mono text-white">
+                                        <label className="flex flex-col font-mono text-white mb-6 font-bold">
                                             Gender
-                                            <select onChange={(e) => handleTextChange(data.id, e.target.value, "gender")}>
+                                            <select className="text-base focus:outline-none w-full h-8 rounded mt-2 pl-2 pr-2 text-white font-mono font-normal bg-inherit border-2 border-white" onChange={(e) => handleTextChange(data.id, e.target.value, "gender")}>
                                                 <option value="Male">Male</option>
                                                 <option value="Female">Female</option>
                                                 <option value="Others">Others</option>
                                             </select>
                                         </label>
 
-                                        <label className="flex flex-col font-mono text-white">
+                                        <label className="flex flex-col font-mono text-white mb-6 font-bold">
                                             Guardian Name
-                                            <input value={data.guardian_name} onChange={(e) => handleTextChange(data.id, e.target.value, "guardian_name")} type="text" />
+                                            <input className="text-base focus:outline-none w-full h-8 rounded mt-2 pl-2 pr-2 text-white font-mono font-normal bg-inherit border-2 border-white" value={data.guardian_name} onChange={(e) => handleTextChange(data.id, e.target.value, "guardian_name")} type="text" />
                                         </label>
 
-                                        <label className="flex flex-col font-mono text-white">
+                                        <label className="flex flex-col font-mono text-white mb-6 font-bold">
                                             Guardian Phone Number
-                                            <input value={data.guardian_phone} onChange={(e) => handleTextChange(data.id, e.target.value, "guardian_phone")} type="number" />
+                                            <input className="text-base focus:outline-none w-full h-8 rounded mt-2 pl-2 pr-2 text-white font-mono font-normal bg-inherit border-2 border-white" value={data.guardian_phone} onChange={(e) => handleTextChange(data.id, e.target.value, "guardian_phone")} type="number" />
                                         </label>
 
-                                        <label className="flex flex-col font-mono text-white">
+                                        <label className="flex flex-col font-mono text-white mb-6 font-bold">
                                             Are you a hostellite?
-                                            <select onChange={(e) => handleTextChange(data.id, e.target.value === "No" ? false : true, "is_hostellite")}>
+                                            <select className="text-base focus:outline-none w-full h-8 rounded mt-2 pl-2 pr-2 text-white font-mono font-normal bg-inherit border-2 border-white" onChange={(e) => handleTextChange(data.id, e.target.value === "No" ? false : true, "is_hostellite")}>
                                                 <option value="No">No</option>
                                                 <option value="Yes">Yes</option>
                                             </select>
                                         </label>
-                                        {data.is_hostellite && (<label className="flex flex-col">
+                                        {data.is_hostellite && (<label className="flex flex-col mb-6 font-bold text-white">
                                             Hostel Room No
-                                            <input value={data.hostel_room} onChange={(e) => handleTextChange(data.id, e.target.value, "hostel_room")} type="text" placeholder="Hostel Room Number" />
+                                            <input className="text-base focus:outline-none w-full h-8 rounded mt-2 pl-2 pr-2 text-white font-mono font-normal bg-inherit border-2 border-white" value={data.hostel_room} onChange={(e) => handleTextChange(data.id, e.target.value, "hostel_room")} type="text"/>
                                         </label>)}
                                     </div>
                                 )
@@ -321,7 +324,7 @@ export default function Registrations() {
                         
                     </div>
 
-                    <button type="submit">Submit</button>
+                    <button className="text-white border-2 p-[5px] rounded bg-inherit w-[50%] mb-[30px] mt-[30px]" type="submit">{loading ? ("Submitting...") : ("Submit")}</button>
 
                 </form>
             </div>
