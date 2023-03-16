@@ -1,7 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { collection, addDoc } from "firebase/firestore"; 
-import { doc, setDoc } from "firebase/firestore"; 
+import { collection, addDoc, getDoc, getDocs, doc, setDoc, onSnapshot } from "firebase/firestore"; 
 import { db } from "../../firebase/firebase";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
@@ -10,21 +9,20 @@ export default function Registrations() {
 
     const [memberCount, setMemberCount] = useState(3);
 
-    const memberNumber = [...Array(memberCount).keys()]
-
     const [teamMembers, setTeamMembers] = useState([
         {
             id: 1,
             name: "",
             srn: "",
             email: "",
-            phone: 0,
+            phone: "",
             semester: 2,
             campus: "RR",
             branch: "CSE",
+            other_branch: "",
             gender: "Male",
             guardian_name: "",
-            guardian_phone: 0,
+            guardian_phone: "",
             is_hostellite: false,
             hostel_room: ""
         },
@@ -33,13 +31,14 @@ export default function Registrations() {
             name: "",
             srn: "",
             email: "",
-            phone: 0,
+            phone: "",
             semester: 2,
             campus: "RR",
             branch: "CSE",
+            other_branch: "",
             gender: "Male",
             guardian_name: "",
-            guardian_phone: 0,
+            guardian_phone: "",
             is_hostellite: false,
             hostel_room: ""
         },
@@ -48,13 +47,14 @@ export default function Registrations() {
             name: "",
             srn: "",
             email: "",
-            phone: 0,
+            phone: "",
             semester: 2,
             campus: "RR",
             branch: "CSE",
+            other_branch: "",
             gender: "Male",
             guardian_name: "",
-            guardian_phone: 0,
+            guardian_phone: "",
             is_hostellite: false,
             hostel_room: ""
         }
@@ -65,6 +65,8 @@ export default function Registrations() {
     const [problemStatement, setProblemStatement] = useState("");
     const [solution, setSolution] = useState("");
 
+    const [registeredTeams, setRegisteredTeams] = useState([]);
+
     const [loading, setLoading] = useState(false);
 
     const addMember = () => {
@@ -74,13 +76,14 @@ export default function Registrations() {
             name: "",
             srn: "",
             email: "",
-            phone: 0,
+            phone: "",
             semester: 2,
             campus: "RR",
             branch: "CSE",
+            other_branch: "",
             gender: "Male",
             guardian_name: "",
-            guardian_phone: 0,
+            guardian_phone: "",
             is_hostellite: false,
             hostel_room: ""
         }])
@@ -93,16 +96,16 @@ export default function Registrations() {
         console.log(teamMembers)
     }
 
-    const showToast = (message) => {
-        setToastMessage(prev => [...prev, message]);
-        setIsToast(true);
-        setTimeout(() => {
-            setIsToast(false);
-        }, 4000)
-    }
-
     const validateData = (e) => {
         e.preventDefault();
+        for (let i = 0; i < registeredTeams.length; i++) {
+            const team = registeredTeams[i];
+            if(team === teamName) {
+                toast("Team Name already taken")
+                return;
+            }
+        }
+
         if(teamName.length === 0) {
             toast("Team Name cannot be empty")
             return;
@@ -115,67 +118,47 @@ export default function Registrations() {
             toast("Solution cannot be empty")
             return;
         }
-        teamMembers.map((data, index) => {
-            if(data.name.length === 0) {
-                toast(`Name Field - ${data.id} empty`)
+        for (let i = 0; i < teamMembers.length; i++) {
+            const member = teamMembers[i];
+            if(member.name.length === 0) {
+                toast(`Name Field - ${member.id} empty`)
                 return;
             }
-            if(data.srn.length === 0 || !data.srn.includes("PES" || "pes") && data.srn.length < 13) {
-                toast(`SRN - ${data.id} invalid`)
+            if(member.srn.length === 0 || !member.srn.includes("PES" || "pes") || member.srn.length < 13) {
+                toast(`SRN - ${member.id} invalid`)
                 return;
             }
-            if(!data.email.includes("@") && !data.email.includes(".")) {
-                toast(`Email - ${data.id} invalid`)
+            if(!member.email.includes("@") && !member.email.includes(".")) {
+                toast(`Email - ${member.id} invalid`)
                 return;
             }
-            if(data.phone === null || data.phone.length < 10 || data.phone.length > 10) {
-                toast(`Phone - ${data.id} invalid`)
+            if(member.phone === "" || member.phone.toString().length < 10 || member.phone.toString().length > 10) {
+                toast(`Phone - ${member.id} invalid`)
                 return;
             }
-            if(data.semester != 2 || 4 || 6 || 8) {
-                toast(`Semester - ${data.id} invalid`)
+            if(member.branch === "Others") {
+                if(member.other_branch.length === 0) {
+                    toast(`Branch Name - ${member.id} empty`)
+                }
+            }
+            if(member.guardian_name.length === 0) {
+                toast(`Guardian Name - ${member.id} empty`)
                 return;
             }
-            if(data.branch === 0) {
-                toast(`Enter Branch - ${data.id}`)
+            if(member.guardian_phone === "" || member.guardian_phone.toString().length < 10 || member.guardian_phone.toString().length > 10) {
+                toast(`Gaurdian Phone - ${member.id} invalid`)
                 return;
             }
-            if(data.guardian_name === 0) {
-                toast(`Guardian Name - ${data.id} empty`)
-                return;
-            }
-            if(data.guardian_phone === null || data.guardian_phone.length < 10 || data.guardian_phone.length > 10) {
-                toast(`Gaurdian Phone - ${data.id} invalid`)
-                return;
-            }
-            if(data.is_hostellite) {
-                if(data.hostel_room.length === 0) {
-                    toast(`Enter Hostel Room - ${data.id}`)
+            if(member.is_hostellite) {
+                if(member.hostel_room.length === 0) {
+                    toast(`Enter Hostel Room - ${member.id}`)
                     return;
                 }
             }
-        })
+        }
 
         handleSubmit()
 
-    }
-
-    const handleSubmit = () => {
-        console.log("hello")
-        const addData = () => {
-            setDoc(doc(db, "teams", teamName), {
-                teamName: teamName,
-                domain: domain,
-                problemStateMent: problemStatement,
-                solution: solution,
-                teamMembers: teamMembers
-            }).then((res) => {
-                console.log(res)
-            }).catch((error) => {
-                console.log(error)
-            })
-        }
-        addData()
     }
 
     const handleTextChange = (id, newValue, field) => {
@@ -193,9 +176,97 @@ export default function Registrations() {
         });
     };
 
+    const handleSubmit = async () => {
+        const resetData = () => {
+            return new Promise(() => {
+                setMemberCount(3);
+                setTeamName("");
+                setProblemStatement("");
+                setSolution("");
+                setTeamMembers([
+                    {
+                        id: 1,
+                        name: "",
+                        srn: "",
+                        email: "",
+                        phone: "",
+                        semester: 2,
+                        campus: "RR",
+                        branch: "CSE",
+                        other_branch: "",
+                        gender: "Male",
+                        guardian_name: "",
+                        guardian_phone: "",
+                        is_hostellite: false,
+                        hostel_room: ""
+                    },
+                    {
+                        id: 2,
+                        name: "",
+                        srn: "",
+                        email: "",
+                        phone: "",
+                        semester: 2,
+                        campus: "RR",
+                        branch: "CSE",
+                        other_branch: "",
+                        gender: "Male",
+                        guardian_name: "",
+                        guardian_phone: "",
+                        is_hostellite: false,
+                        hostel_room: ""
+                    },
+                    {
+                        id: 3,
+                        name: "",
+                        srn: "",
+                        email: "",
+                        phone: "",
+                        semester: 2,
+                        campus: "RR",
+                        branch: "CSE",
+                        other_branch: "",
+                        gender: "Male",
+                        guardian_name: "",
+                        guardian_phone: "",
+                        is_hostellite: false,
+                        hostel_room: ""
+                    }
+                ])
+                setRegisteredTeams([]);
+            })
+        }
+
+        const submitData = async () => {
+            try {
+                await setDoc(doc(db, "teams", teamName), {
+                    teamName: teamName,
+                    domain: domain,
+                    problemStateMent: problemStatement,
+                    solution: solution,
+                    teamMembers: teamMembers 
+                })
+                await resetData();
+            } catch (err) {
+                toast("There seems to be a problem submitting your response.")
+            }
+        }
+        submitData();
+    }
+
+    useEffect(() => {
+        const getRegisteredTeams = async () => {
+            const querySnapshot = await getDocs(collection(db, 'teams'));
+            querySnapshot.forEach(doc => {
+                setRegisteredTeams(prev => [...prev, doc.id])
+            })
+        }
+        getRegisteredTeams();
+    }, [])
+    
     return(
         <div className="min-h-screen flex flex-col w-full items-center bg-background text-center">
-            <h1 className="text-white font-bold text-3xl font-mono mt-7 mb-7">Arithmania Registrations</h1>
+            <h1 className="text-white font-bold text-3xl font-mono mt-7 mb-7">Arithemania Registrations</h1>
             <div className="flex flex-col w-[80%] h-auto">
                 <form onSubmit={validateData} className="flex flex-col text-left items-center w-full">
                     <label className="text-lg flex flex-col font-mono text-white mb-6 font-bold w-full">
@@ -285,7 +356,10 @@ export default function Registrations() {
                                                 <option value="Others">Others</option>
                                             </select>
                                         </label>
-                                        {data.branch === "Others" && <input type="text" placeholder="Enter your branch" />}
+                                        {data.branch === "Others" && (<label className="flex flex-col mb-6 font-bold text-white font-mono">
+                                            Branch Name
+                                            <input className="text-base focus:outline-none w-full h-8 rounded mt-2 pl-2 pr-2 text-white font-mono font-normal bg-inherit border-2 border-white" value={data.other_branch} onChange={(e) => handleTextChange(data.id, e.target.value, "other_branch")} type="text"/>
+                                        </label>)}
 
                                         <label className="flex flex-col font-mono text-white mb-6 font-bold">
                                             Gender
@@ -313,7 +387,7 @@ export default function Registrations() {
                                                 <option value="Yes">Yes</option>
                                             </select>
                                         </label>
-                                        {data.is_hostellite && (<label className="flex flex-col mb-6 font-bold text-white">
+                                        {data.is_hostellite && (<label className="flex flex-col mb-6 font-bold text-white font-mono">
                                             Hostel Room No
                                             <input className="text-base focus:outline-none w-full h-8 rounded mt-2 pl-2 pr-2 text-white font-mono font-normal bg-inherit border-2 border-white" value={data.hostel_room} onChange={(e) => handleTextChange(data.id, e.target.value, "hostel_room")} type="text"/>
                                         </label>)}
